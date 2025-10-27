@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Dashboard</title>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <header>
+            <h1>
+                <span class="emoji-icon">🎯</span>
+                Personal Dashboard
+            </h1>
+            <div class="datetime" id="datetime">
+                <span>⏰</span>
+                <span id="datetimeText"></span>
+            </div>
+            <div class="weather-info" id="weatherInfo">
+                <span class="loading"></span>
+                Memuat informasi cuaca...
+            </div>
+        </header>
+
+        <!-- Dashboard Grid -->
+        <div class="dashboard-grid">
+            <!-- Jadwal Kuliah Card -->
+            <div class="card">
+                <h2>
+                    <span>📚 Jadwal Kuliah</span>
+                    <button class="btn btn-primary" onclick="app.openModal('schedule')">
+                        + Tambah
+                    </button>
+                </h2>
+                <div class="item-list" id="scheduleList"></div>
+            </div>
+
+            <!-- Daftar Tugas Card -->
+            <div class="card">
+                <h2>
+                    <span>✅ Daftar Tugas <span class="stats-badge" id="taskStats">0</span></span>
+                    <button class="btn btn-primary" onclick="app.openModal('task')">
+                        + Tambah
+                    </button>
+                </h2>
+                <div class="item-list" id="taskList"></div>
+            </div>
+
+            <!-- Catatan Card -->
+            <div class="card">
+                <h2>
+                    <span>📝 Catatan</span>
+                    <button class="btn btn-primary" onclick="app.openModal('note')">
+                        + Tambah
+                    </button>
+                </h2>
+                <div class="item-list" id="noteList"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Jadwal Kuliah -->
+    <div id="scheduleModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>📚 Tambah Jadwal</h2>
+                <button class="close-btn" onclick="app.closeModal('schedule')">×</button>
+            </div>
+            <div class="input-group">
+                <label>Mata Kuliah</label>
+                <input type="text" id="scheduleCourse" placeholder="Contoh: Pemrograman Web">
+            </div>
+            <div class="input-group">
+                <label>Hari</label>
+                <select id="scheduleDay">
+                    <option value="Senin">Senin</option>
+                    <option value="Selasa">Selasa</option>
+                    <option value="Rabu">Rabu</option>
+                    <option value="Kamis">Kamis</option>
+                    <option value="Jumat">Jumat</option>
+                    <option value="Sabtu">Sabtu</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label>Waktu</label>
+                <input type="time" id="scheduleTime">
+            </div>
+            <div class="input-group">
+                <label>Ruangan</label>
+                <input type="text" id="scheduleRoom" placeholder="Contoh: Lab 101">
+            </div>
+            <div class="input-group">
+                <label>Dosen</label>
+                <input type="text" id="scheduleLecturer" placeholder="Contoh: Dr. John Doe">
+            </div>
+            <button class="btn btn-primary" onclick="app.saveSchedule()" style="width: 100%;">
+                💾 Simpan Jadwal
+            </button>
+        </div>
+    </div>
+
+    <!-- Modal Tugas -->
+    <div id="taskModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>✅ Tambah Tugas</h2>
+                <button class="close-btn" onclick="app.closeModal('task')">×</button>
+            </div>
+            <div class="input-group">
+                <label>Nama Tugas</label>
+                <input type="text" id="taskTitle" placeholder="Contoh: Tugas Praktikum JavaScript">
+            </div>
+            <div class="input-group">
+                <label>Deadline</label>
+                <input type="date" id="taskDeadline">
+            </div>
+            <div class="input-group">
+                <label>Prioritas</label>
+                <select id="taskPriority">
+                    <option value="high">🔴 Tinggi</option>
+                    <option value="medium">🟡 Sedang</option>
+                    <option value="low">🟢 Rendah</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label>Deskripsi</label>
+                <textarea id="taskDescription" placeholder="Deskripsi tugas..."></textarea>
+            </div>
+            <button class="btn btn-primary" onclick="app.saveTask()" style="width: 100%;">
+                💾 Simpan Tugas
+            </button>
+        </div>
+    </div>
+
+    <!-- Modal Catatan -->
+    <div id="noteModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>📝 Tambah Catatan</h2>
+                <button class="close-btn" onclick="app.closeModal('note')">×</button>
+            </div>
+            <div class="input-group">
+                <label>Judul Catatan</label>
+                <input type="text" id="noteTitle" placeholder="Contoh: Catatan Kuliah">
+            </div>
+            <div class="input-group">
+                <label>Isi Catatan</label>
+                <textarea id="noteContent" placeholder="Tulis catatan Anda di sini..." style="min-height: 180px;"></textarea>
+            </div>
+            <button class="btn btn-primary" onclick="app.saveNote()" style="width: 100%;">
+                💾 Simpan Catatan
+            </button>
+        </div>
+    </div>
+
+    <!-- JavaScript Files -->
+    <script type="module" src="js/storage.js"></script>
+    <script type="module" src="js/app.js"></script>
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>
