@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manajemen Tugas Mahasiswa</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📚 Manajemen Tugas Mahasiswa</h1>
+            <p>Kelola aktivitas akademik Anda dengan mudah dan efisien</p>
+        </header>
+
+        <div class="stats">
+            <div class="stat-card">
+                <h3 id="totalTasks">0</h3>
+                <p>Total Tugas</p>
+            </div>
+            <div class="stat-card">
+                <h3 id="pendingTasks">0</h3>
+                <p>Belum Selesai</p>
+            </div>
+            <div class="stat-card">
+                <h3 id="completedTasks">0</h3>
+                <p>Sudah Selesai</p>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="form-section">
+                <h2 id="formTitle">➕ Tambah Tugas Baru</h2>
+                <form id="taskForm">
+                    <div class="form-group">
+                        <label for="taskName">Nama Tugas *</label>
+                        <input type="text" id="taskName" placeholder="Contoh: Tugas UTS Pemrograman Web">
+                        <span class="error" id="nameError">Nama tugas tidak boleh kosong</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="taskCourse">Mata Kuliah *</label>
+                        <input type="text" id="taskCourse" placeholder="Contoh: Pemrograman Web">
+                        <span class="error" id="courseError">Mata kuliah tidak boleh kosong</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="taskDeadline">Deadline *</label>
+                        <input type="datetime-local" id="taskDeadline">
+                        <span class="error" id="deadlineError">Deadline harus diisi</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="taskDescription">Deskripsi (Opsional)</label>
+                        <textarea id="taskDescription" placeholder="Detail tugas..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Tambah Tugas</button>
+                    <button type="button" class="btn btn-secondary" id="cancelBtn" style="display: none;">Batal Edit</button>
+                </form>
+            </div>
+
+            <div class="task-section">
+                <h2>📋 Daftar Tugas</h2>
+                <div class="filters">
+                    <select id="filterStatus">
+                        <option value="all">🔍 Semua Status</option>
+                        <option value="pending">⏳ Belum Selesai</option>
+                        <option value="completed">✅ Sudah Selesai</option>
+                    </select>
+                    <input type="text" id="searchCourse" placeholder="🔎 Cari mata kuliah...">
+                </div>
+                <div class="task-list" id="taskList">
+                    <div class="empty-state">
+                        <div class="icon">📝</div>
+                        <p>Belum ada tugas. Tambahkan tugas pertama Anda!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js" defer></script>
+</body>
+</html>
