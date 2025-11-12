@@ -16,13 +16,16 @@ function BookList({books, deleteBook, updateBook}) {
                     <h3>{book.judul}</h3>
                     <p>penulis: {book.penulis}</p>
                     <p>status: {book.status}</p>
-                    <button onClick={() => handleToggleStatus(book)}>
+                    <div className="book-actions">
+                    <button
+                    className="btn-toggle" 
+                    onClick={() => handleToggleStatus(book)}>
                         {book.status === 'dibaca' ? 'Tandai "beli"' : 'Tandai "dibaca"'}
                     </button>
-
-                    <button onClick={() => deleteBook(book.id)}>
+                    <button className="btn-delete" onClick={() => deleteBook(book.id)}>
                         hapus
                     </button>
+                    </div>
                 </li>
                 ))}
             </ul>

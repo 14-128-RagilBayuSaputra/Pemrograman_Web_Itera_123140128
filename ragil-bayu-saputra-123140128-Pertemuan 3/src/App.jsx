@@ -1,5 +1,6 @@
 import {Routes, Route, Link} from 'react-router-dom';
 import HomePage from './pages/Home/Home.jsx';
+import './App.css';
 
 function StatsPage() {
   return <h2>Halaman Statistik (Segera Hadir)</h2>

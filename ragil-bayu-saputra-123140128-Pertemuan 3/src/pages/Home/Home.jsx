@@ -1,7 +1,4 @@
-// src/pages/Home/Home.jsx
-
 import React, { useState } from 'react';
-// 1. Kita import komponen yang akan ditampilkan di halaman ini
 import BookList from '../../components/BookList.jsx';
 import BookForm from '../../components/BookForm/BookForm.jsx';
 import { useBooks } from '../../context/BookContext.jsx';
@@ -10,7 +7,15 @@ import { useBooks } from '../../context/BookContext.jsx';
 function HomePage() {
     const { books: allBook, deleteBook, updateBook } = useBooks();
     const [searchTerm, setSearchTerm] = useState('');
-    const filteredBooks = allBook.filter((book) => {
+    const [filterStatus, setFilterStatus] = useState('semua');
+    const filteredBooks = allBook
+    .filter((book) => {
+      if (filterStatus === 'semua'){
+        return true;
+      }
+      return book.status === filterStatus;
+    })
+    .filter((book) => {
         return book.judul.toLowerCase().includes(searchTerm.toLowerCase());
     });
 
@@ -20,6 +25,7 @@ function HomePage() {
       <BookForm />
       <hr />
         <h3>Cari Buku</h3>
+        <div className="filter-search">
         <input 
         type="text"
         placeholder='cari berdasarkan judul.'
@@ -27,6 +33,18 @@ function HomePage() {
         onChange={(e) => setSearchTerm(e.target.value)}
         style={{ marginBottom: '20px', width:'50%' }}
         />
+
+        {/* INI YANG HILANG: Dropdown untuk filter status */}
+      <select
+        value={filterStatus}
+        onChange={(e) => setFilterStatus(e.target.value)}
+        style={{ marginBottom: '20px', marginLeft: '10px' }}
+        >
+        <option value="semua">Semua Status</option>
+        <option value="dibaca">Sudah Dibaca</option>
+        <option value="beli">Akan Dibeli</option>
+      </select>
+        </div>
 
       <BookList 
         books={filteredBooks}
