@@ -1,16 +1,12 @@
-/* src/App.css */
-
-/* 1. Layout Utama Aplikasi */
 .app-container {
-  max-width: 800px; /* Lebar maksimum konten */
-  margin: 2rem auto; /* Otomatis ke tengah */
+  max-width: 800px; 
+  margin: 2rem auto;
   padding: 2rem;
   background-color: #ffffff;
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
-/* 2. Navigasi */
 nav {
   padding-bottom: 1rem;
   margin-bottom: 1.5rem;
@@ -19,7 +15,7 @@ nav {
 
 nav a {
   text-decoration: none;
-  color: #007bff; /* Biru primer */
+  color: #007bff; 
   font-weight: 500;
   padding: 0.5rem;
 }
@@ -28,7 +24,6 @@ nav a:hover {
   text-decoration: underline;
 }
 
-/* 3. Headers */
 h1 {
   color: #222;
   margin-bottom: 1.5rem;
@@ -40,21 +35,19 @@ h3 {
   margin-bottom: 1rem;
 }
 
-/* 4. Form (BookForm, Search, Filter) */
 form {
   display: grid;
-  grid-template-columns: 1fr 1fr; /* 2 kolom */
-  gap: 1rem; /* Jarak antar elemen */
+  grid-template-columns: 1fr 1fr; 
+  gap: 1rem; 
   margin-bottom: 1.5rem;
   padding: 1.5rem;
   background-color: #fafafa;
   border-radius: 8px;
 }
 
-/* Buat tombol submit jadi 1 kolom penuh */
 form button {
-  grid-column: 1 / -1; /* Rentangkan selebar grid */
-  justify-self: start; /* Jangan melebar penuh */
+  grid-column: 1 / -1; 
+  justify-self: start; 
 }
 
 input[type='text'],
@@ -66,19 +59,17 @@ select {
   font-size: 1rem;
 }
 
-/* Area Filter & Search */
 .filter-search {
   display: flex;
-  gap: 1rem; /* Jarak antara search dan filter */
+  gap: 1rem; 
   margin-bottom: 1.5rem;
 }
 
 .filter-search input,
 .filter-search select {
-  width: 50%; /* Bagi 2 */
+  width: 50%; 
 }
 
-/* 5. Tombol (Buttons) */
 button {
   padding: 0.75rem 1.5rem;
   border: none;
@@ -89,18 +80,16 @@ button {
   transition: background-color 0.2s;
 }
 
-/* Tombol Submit Utama */
 button[type='submit'] {
-  background-color: #007bff; /* Biru */
+  background-color: #007bff; 
   color: white;
 }
 button[type='submit']:hover {
   background-color: #0056b3;
 }
 
-/* 6. Daftar Buku (BookList) */
 .book-list ul {
-  list-style-type: none; /* Hilangkan bullet points */
+  list-style-type: none; 
 }
 
 .book-list li {
@@ -111,7 +100,6 @@ button[type='submit']:hover {
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.03);
   
-  /* Atur tombol agar di kanan */
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -121,30 +109,29 @@ button[type='submit']:hover {
 .book-list h3 {
   margin-bottom: 0.5rem;
   color: #0056b3;
-  width: 100%; /* Judul ambil 1 baris penuh */
+  width: 100%; 
 }
 
 .book-list p {
   margin-bottom: 0.5rem;
   color: #555;
-  flex-basis: 50%; /* Bagi 2 kolom untuk penulis & status */
+  flex-basis: 50%; 
 }
 
 .book-list .book-actions {
   margin-top: 1rem;
-  flex-basis: 100%; /* Aksi tombol di baris baru */
-  text-align: right; /* Taruh di kanan */
+  flex-basis: 100%; 
+  text-align: right; 
 }
 
 .book-list .book-actions button {
   margin-left: 0.5rem;
-  background-color: #f0f0f0; /* Tombol abu-abu netral */
+  background-color: #f0f0f0; 
   color: #333;
 }
 
-/* Tombol Hapus (Danger) */
 .book-list .book-actions .btn-delete {
-  background-color: #dc3545; /* Merah */
+  background-color: #dc3545; 
   color: white;
 }
 .book-list .book-actions .btn-delete:hover {

@@ -1,6 +1,3 @@
-/* src/index.css */
-
-/* Reset dasar */
 * {
   margin: 0;
   padding: 0;
@@ -10,7 +7,7 @@
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
     Arial, sans-serif;
-  background-color: #f0f2f5; /* Background abu-abu lembut */
+  background-color: #f0f2f5; 
   color: #333;
   line-height: 1.6;
 }

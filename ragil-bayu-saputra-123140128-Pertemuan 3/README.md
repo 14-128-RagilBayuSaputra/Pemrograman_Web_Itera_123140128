@@ -71,7 +71,7 @@ Berikut adalah cara untuk menginstal dan menjalankan proyek ini di lingkungan lo
 
 *Contoh:*
 **Tampilan Utama (Form, Filter, dan Daftar)**
-![Tampilan Utama Aplikasi](./Tampilan Utama.png)
+![Tampilan Utama Aplikasi](./tampilan utama.png)
 
 ---
 
@@ -95,4 +95,4 @@ Proyek ini dilengkapi dengan **5 *unit test*** yang ditulis menggunakan Vitest d
 
 **[WAJIB: Jalankan `npm test` dan screenshot hasil terminal yang menunjukkan 5 tes PASS]**
 
-![Hasil Laporan Test](./Laporan test.png)
+![Hasil Laporan Test](./laporan test.png)

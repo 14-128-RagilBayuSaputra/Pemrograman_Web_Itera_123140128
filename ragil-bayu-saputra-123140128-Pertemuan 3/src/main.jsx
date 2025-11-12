@@ -7,11 +7,10 @@ import { BrowserRouter } from 'react-router-dom'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    {/* 2. Bungkus komponen <App /> dengan <BookProvider> */}
     <BrowserRouter>
-    <BookProvider>
-      <App />
-    </BookProvider>
+      <BookProvider>
+        <App />
+     </BookProvider>
     </BrowserRouter>
   </React.StrictMode>
 )

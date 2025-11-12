@@ -3,7 +3,6 @@ import BookList from '../../components/BookList.jsx';
 import BookForm from '../../components/BookForm/BookForm.jsx';
 import { useBooks } from '../../context/BookContext.jsx';
 
-// 2. Ini adalah "Page Component"
 function HomePage() {
     const { books: allBook, deleteBook, updateBook } = useBooks();
     const [searchTerm, setSearchTerm] = useState('');
@@ -21,7 +20,6 @@ function HomePage() {
 
   return (
     <div className="home-page">
-      {/* 3. Kita "pindahkan" layout dari App.jsx ke sini */}
       <BookForm />
       <hr />
         <h3>Cari Buku</h3>
@@ -34,7 +32,6 @@ function HomePage() {
         style={{ marginBottom: '20px', width:'50%' }}
         />
 
-        {/* INI YANG HILANG: Dropdown untuk filter status */}
       <select
         value={filterStatus}
         onChange={(e) => setFilterStatus(e.target.value)}
@@ -44,7 +41,7 @@ function HomePage() {
         <option value="dibaca">Sudah Dibaca</option>
         <option value="beli">Akan Dibeli</option>
       </select>
-        </div>
+      </div>
 
       <BookList 
         books={filteredBooks}
