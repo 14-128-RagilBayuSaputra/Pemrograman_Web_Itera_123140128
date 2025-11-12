@@ -1,5 +1,3 @@
-// src/pages/Home/Home.test.jsx
-
 import { render, screen, fireEvent } from '@testing-library/react';
 import { describe, it, expect, vi } from 'vitest';
 import HomePage from './Home.jsx'; 
@@ -35,7 +33,6 @@ describe('Komponen HomePage', () => {
     const searchInput = screen.getByPlaceholderText(/cari berdasarkan judul/i);
     const statusSelect = screen.getByRole('combobox');
 
-    // --- Langkah 1: Tes Search (Pencarian) ---
     fireEvent.change(searchInput, { target: { value: 'React' } });
 
     expect(BookList).toHaveBeenLastCalledWith({
@@ -45,9 +42,8 @@ describe('Komponen HomePage', () => {
       ],
       deleteBook: expect.any(Function),
       updateBook: expect.any(Function),
-    }, undefined); // <-- PERBAIKAN 1: Ganti expect.anything() jadi undefined
+    }, undefined); 
 
-    // --- Langkah 2: Tes Filter Status (Dropdown) ---
     fireEvent.change(statusSelect, { target: { value: 'dibaca' } });
 
     expect(BookList).toHaveBeenLastCalledWith({
@@ -57,15 +53,14 @@ describe('Komponen HomePage', () => {
       ],
       deleteBook: expect.any(Function),
       updateBook: expect.any(Function),
-    }, undefined); // <-- PERBAIKAN 2: Ganti expect.anything() jadi undefined
+    }, undefined);
 
-    // --- Langkah 3: Ubah filter status jadi "Akan Dibeli" ---
     fireEvent.change(statusSelect, { target: { value: 'beli' } });
 
     expect(BookList).toHaveBeenLastCalledWith({
       books: [], 
       deleteBook: expect.any(Function),
       updateBook: expect.any(Function),
-    }, undefined); // <-- PERBAIKAN 3: Ganti expect.anything() jadi undefined
+    }, undefined); 
   });
 });
