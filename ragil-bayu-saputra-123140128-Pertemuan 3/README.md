@@ -1,6 +1,6 @@
 # Aplikasi Manajemen Buku Pribadi - Praktikum 3
 
-Proyek ini adalah aplikasi "Personal Book Management" yang dibuat untuk memenuhi tugas Praktikum 3 mata kuliah Pemrograman Web (IFXXXX).
+Proyek ini adalah aplikasi "Personal Book Management" yang dibuat untuk memenuhi tugas Praktikum 3 mata kuliah Pemrograman Web.
 
 - **Nama:** Ragil Bayu Saputra
 - **NIM:** 123140128
@@ -39,7 +39,7 @@ Berikut adalah cara untuk menginstal dan menjalankan proyek ini di lingkungan lo
 
 1.  **Clone repositori:**
     ```bash
-    git clone [URL_REPOSITORI_ANDA_DI_SINI]
+    git clone [https://github.com/14-128-RagilBayuSaputra/Pemrograman_Web_Itera_123140128]
     ```
 
 2.  **Masuk ke direktori proyek:**
@@ -71,10 +71,7 @@ Berikut adalah cara untuk menginstal dan menjalankan proyek ini di lingkungan lo
 
 *Contoh:*
 **Tampilan Utama (Form, Filter, dan Daftar)**
-![Tampilan Utama Aplikasi](URL_SCREENSHOT_UTAMA_ANDA)
-
-**Tampilan Hasil Pencarian/Filter**
-![Tampilan Hasil Filter](URL_SCREENSHOT_FILTER_ANDA)
+![Tampilan Utama Aplikasi](./Tampilan Utama.png)
 
 ---
 
@@ -98,4 +95,4 @@ Proyek ini dilengkapi dengan **5 *unit test*** yang ditulis menggunakan Vitest d
 
 **[WAJIB: Jalankan `npm test` dan screenshot hasil terminal yang menunjukkan 5 tes PASS]**
 
-![Hasil Laporan Test](URL_SCREENSHOT_TEST_ANDA)
+![Hasil Laporan Test](./Laporan test.png)
